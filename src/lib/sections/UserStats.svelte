@@ -8,7 +8,7 @@
   import LegendTable from "$lib/components/LegendTable.svelte";
   import VersusLine from "$lib/components/VersusLine.svelte";
 
-  const fallbackImageUrl = "/img/okayeg.webp";
+  const fallbackImageUrl = "img/okayeg.webp";
   let imageUrl = null;
   $: {
     imageUrl = null;

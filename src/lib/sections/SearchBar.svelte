@@ -34,9 +34,9 @@
 
 <div class="container-fluid">
   <h1 class="my-2 text-center">
-    <img src="/img/okayeg.webp" width="48" height="48" alt="Okayeg" />
+    <img src="img/okayeg.webp" width="48" height="48" alt="Okayeg" />
     OkayegBOT stats lookup
-    <img src="/img/okayeg.webp" width="48" height="48" alt="geyakO" class="mirror" />
+    <img src="img/okayeg.webp" width="48" height="48" alt="geyakO" class="mirror" />
   </h1>
   <div class="mb-3">
     <label for="searchbar_username" class="form-label fs-4">🔍 Enter your username:</label>
