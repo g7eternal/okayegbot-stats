@@ -1,3 +1,9 @@
+export const LOADING_LINES = [
+  "Performing some eggregations...",
+  "So many eggs! Need to load them all...",
+  "<small class='opacity-75'>Accessing your browser history...</small><br>Ahem... I mean, loading eggs...",
+];
+
 export const CHART_COLORS = {
   GREEN: "rgba(130, 240, 145, 1)",
   RED: "rgba(255, 134, 159, 1)",

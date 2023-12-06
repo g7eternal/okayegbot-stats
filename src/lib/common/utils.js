@@ -9,3 +9,8 @@ export function makeGenericDataElement(label, count, colorName) {
     borderColor: CHART_COLORS[colorName],
   };
 }
+
+export function sample(arr = []) {
+  const randomIndex = Math.floor(Math.random() * arr.length);
+  return arr[randomIndex];
+}

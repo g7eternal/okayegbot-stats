@@ -1,5 +1,7 @@
 <script>
-  import { errorState, username, currentUser } from "$lib/common/stores.js";
+  import { LOADING_LINES } from "$lib/common/consts.js";
+  import { sample } from "$lib/common/utils.js";
+  import { errorState } from "$lib/common/stores.js";
   import { stats } from "$lib/common/stats.js";
   import SearchBar from "$lib/sections/SearchBar.svelte";
   import DataTabs from "$lib/sections/DataTabs.svelte";
@@ -19,7 +21,9 @@
   <div class="container-xl">
     <div class="w-100 py-4 d-flex flex-column align-items-center fs-4">
       <img src="img/chateg.webp" width="128" height="128" alt="Okayeg" />
-      <p class="my-4">Performing some eggregations...</p>
+      <p class="my-4">
+        {@html sample(LOADING_LINES)}
+      </p>
       <div class="spinner-border" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>
