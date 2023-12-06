@@ -31,7 +31,6 @@ export const stats = readable([], async (set) => {
             "=eat": raw.egseaten || 0,
             "=coinflip": raw.coinflips || 0,
             "=join / lottery": raw.lotteryjoins || 0,
-            "=trivia": raw.trivia || 0,
             "=duel": raw.duels || 0,
             "=roulette": raw.roulettes || 0,
             Other: 0,

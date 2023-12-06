@@ -54,7 +54,7 @@ export const sortingProperties = {
     max: "biggest win",
     min: "biggest loss",
   },
-  commands: ["=eg", "=eat", "=coinflip", "=join / lottery", "=trivia", "=duel", "=roulette", "Other"],
+  commands: ["=eg", "=eat", "=coinflip", "=join / lottery", "=duel", "=roulette", "Other"],
   stocks: ["bajcoin", "chicken", "copium", "shungite"],
   egStats: { w: "Positive (gain)", d: "Neutral (nil)", l: "Negative (loss)" },
   egTransfers: { in: "In / received", out: "Out / given" },
