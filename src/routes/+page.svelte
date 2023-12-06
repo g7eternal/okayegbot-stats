@@ -28,19 +28,6 @@
 {:else}
   <div class="container-xl">
     <SearchBar />
-    {#if $username}
-      {#if $currentUser}
-        <DataTabs />
-      {:else}
-        <div class="container-fluid d-flex flex-column align-items-center">
-          <img src="img/sadeg.webp" width="128" height="128" alt="Sadeg" />
-          <p class="text-warning fs-4">User <b>@{$username}</b> is not in the list!</p>
-        </div>
-      {/if}
-    {:else}
-      <div class="w-100 text-center">
-        <i class="text-muted">Type a username and click "Search"</i>
-      </div>
-    {/if}
+    <DataTabs />
   </div>
 {/if}

@@ -1,12 +1,13 @@
 <script>
+  import { currentUser, username } from "$lib/common/stores.js";
   import UserStats from "./UserStats.svelte";
-  import ChartPlaceholder from "$lib/components/ChartPlaceholder.svelte";
   import CommandDataCard from "$lib/datacards/CommandDataCard.svelte";
   import RouletteDataCard from "$lib/datacards/RouletteDataCard.svelte";
   import CoinflipDataCard from "$lib/datacards/CoinflipDataCard.svelte";
   import DuelDataCard from "$lib/datacards/DuelDataCard.svelte";
   import TriviaDataCard from "$lib/datacards/TriviaDataCard.svelte";
   import StocksDataCard from "$lib/datacards/StocksDataCard.svelte";
+  import Leaderboard from "$lib/sections/Leaderboard.svelte";
 </script>
 
 <div class="container-fluid">
@@ -41,27 +42,40 @@
 
   <div class="tab-content">
     <div class="tab-pane active" id="tabStats" role="tabpanel">
-      <div class="row py-0 px-4">
-        <div class="col-lg-6">
-          <UserStats />
+      {#if $username}
+        {#if $currentUser}
+          <div class="row py-0 px-4">
+            <div class="col-lg-6">
+              <UserStats />
 
-          <CommandDataCard />
+              <CommandDataCard />
 
-          <StocksDataCard />
+              <StocksDataCard />
+            </div>
+            <div class="col-lg-6">
+              <RouletteDataCard />
+
+              <CoinflipDataCard />
+
+              <DuelDataCard />
+
+              <TriviaDataCard />
+            </div>
+          </div>
+        {:else}
+          <div class="container-fluid pt-4 d-flex flex-column align-items-center">
+            <img src="img/sadeg.webp" width="128" height="128" alt="Sadeg" />
+            <p class="text-warning fs-4">User <b>@{$username}</b> is not in the list!</p>
+          </div>
+        {/if}
+      {:else}
+        <div class="container-fluid py-4 text-center">
+          <i class="text-muted">Type in a username and click "Search"</i>
         </div>
-        <div class="col-lg-6">
-          <RouletteDataCard />
-
-          <CoinflipDataCard />
-
-          <DuelDataCard />
-
-          <TriviaDataCard />
-        </div>
-      </div>
+      {/if}
     </div>
     <div class="tab-pane" id="tabLeaderboard" role="tabpanel">
-      <ChartPlaceholder>Hold on, I'm cooking... Check back later</ChartPlaceholder>
+      <Leaderboard />
     </div>
   </div>
 </div>

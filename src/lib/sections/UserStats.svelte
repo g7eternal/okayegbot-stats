@@ -10,7 +10,7 @@
 
   const fallbackImageUrl = "img/okayeg.webp";
   let imageUrl = null;
-  $: {
+  $: if ($currentUser) {
     imageUrl = null;
     fetch("https://7tv.io/v3/users/twitch/" + $currentUser._id)
       .then((data) => data.json())
