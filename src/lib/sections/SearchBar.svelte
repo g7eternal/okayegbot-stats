@@ -41,7 +41,7 @@
   <div class="mb-3">
     <label for="searchbar_username" class="form-label fs-4">🔍 Enter your username:</label>
     <div class="input-group">
-      <span class="input-group-text fw-bold">@</span>
+      <label for="searchbar_username" class="input-group-text">@</label>
       <input
         type="text"
         class="form-control"
@@ -68,5 +68,9 @@
 <style>
   .mirror {
     transform: scaleX(-1);
+  }
+  label {
+    cursor: pointer;
+    font-weight: bold;
   }
 </style>

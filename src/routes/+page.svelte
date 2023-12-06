@@ -19,7 +19,7 @@
   </div>
 {:else if !($stats.length > 0)}
   <div class="container-xl">
-    <div class="w-100 py-4 d-flex flex-column align-items-center fs-4">
+    <div class="w-100 mt-4 py-4 d-flex flex-column align-items-center fs-4">
       <img src="img/chateg.webp" width="128" height="128" alt="Okayeg" />
       <p class="my-4">
         {@html sample(LOADING_LINES)}
@@ -30,6 +30,7 @@
     </div>
   </div>
 {:else}
+  <div id="pageTopAnchor"></div>
   <div class="container-xl">
     <SearchBar />
     <DataTabs />
