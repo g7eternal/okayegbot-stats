@@ -4,6 +4,9 @@ export const LOADING_LINES = [
   "<small class='opacity-75'>Accessing your browser history...</small><br>Ahem... I mean, loading eggs...",
 ];
 
+export const COMMANDS = ["=eg", "=eat", "=coinflip", "=join / lottery", "=duel", "=roulette", "Other"];
+export const STOCKS = ["chicken", "shungite", "copium", "bajcoin"];
+
 export const CHART_COLORS = {
   GREEN: "rgba(130, 240, 145, 1)",
   RED: "rgba(255, 134, 159, 1)",
@@ -25,9 +28,8 @@ export const TABLE_BG = Object.keys(CHART_COLORS).reduce((obj, key) => {
   return obj;
 }, {});
 
-export const COMMAND_COLORS = Object.keys(CHART_COLORS);
-
-export const STOCKS = ["chicken", "shungite", "copium", "bajcoin"];
+export const COMMAND_COLORS = Object.keys(CHART_COLORS).slice(0, COMMANDS.length);
+COMMAND_COLORS[COMMAND_COLORS.length - 1] = "GRAY"; // "Other" is always gray
 
 export const COMMON_COLOR_KEYS = {
   Win: "GREEN",

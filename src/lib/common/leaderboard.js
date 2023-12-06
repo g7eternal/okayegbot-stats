@@ -1,4 +1,5 @@
 import { stats } from "$lib/common/stats.js";
+import { COMMANDS, STOCKS } from "$lib/common/consts.js";
 
 // auxiliary sorting functions:
 const sortNumbersAscending = (a, b) => a - b;
@@ -54,8 +55,8 @@ export const sortingProperties = {
     max: "biggest win",
     min: "biggest loss",
   },
-  commands: ["=eg", "=eat", "=coinflip", "=join / lottery", "=duel", "=roulette", "Other"],
-  stocks: ["bajcoin", "chicken", "copium", "shungite"],
+  commands: COMMANDS,
+  stocks: STOCKS,
   egStats: { w: "Positive (gain)", d: "Neutral (nil)", l: "Negative (loss)" },
   egTransfers: { in: "In / received", out: "Out / given" },
 };
