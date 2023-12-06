@@ -68,7 +68,7 @@
 
     if ($username) {
       const userBoundData = data.findIndex((entry) => entry.user === $username);
-      if (dataChunk.indexOf(data[userBoundData]) < 0) {
+      if (userBoundData >= 0 && dataChunk.indexOf(data[userBoundData]) < 0) {
         dataChunkInflation = 1;
         if (userBoundData > $dataOffset) {
           dataChunk.push(data[userBoundData]);
