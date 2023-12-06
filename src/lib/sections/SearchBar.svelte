@@ -11,11 +11,25 @@
     if ($username !== usernameInput) {
       $username = usernameInput;
     }
+
+    document.getElementById("pageTopAnchor").scrollIntoView({ behavior: "instant", block: "start", inline: "nearest" });
   }
 
   function detectEnterKey(event) {
     if (event?.key === "Enter") {
       doSearch();
+    }
+  }
+
+  function detectHashChange(event) {
+    // detects #hash change, and changes username in search bar
+    usernameInput = window.location.hash.replaceAll("#", "");
+    doSearch();
+
+    // quick hack: also open the "user stats" tab
+    const tabs = Array.from(document.querySelectorAll(".nav-tabs a"));
+    if (tabs.length > 0) {
+      tabs[0].click();
     }
   }
 
@@ -31,6 +45,8 @@
     }
   });
 </script>
+
+<svelte:window on:hashchange={detectHashChange} />
 
 <div class="container-fluid">
   <h1 class="my-2 text-center">

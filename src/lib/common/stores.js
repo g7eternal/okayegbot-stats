@@ -1,8 +1,12 @@
+import { browser } from "$app/environment";
 import { writable } from "svelte/store";
 import { stats } from "./stats.js";
 import { STOCKS } from "$lib/common/consts.js";
 
 export const errorState = writable("");
+
+// get username from user's link:
+const initialUsername = String(browser ? window.location.hash || "" : "").replaceAll("#", "");
 
 export const username = writable("");
 export const currentUser = writable(null);
@@ -10,6 +14,11 @@ export const currentUser = writable(null);
 let dataRef;
 stats.subscribe((data) => {
   dataRef = data;
+
+  // do the first search upon receiving useful data:
+  if (dataRef.length > 0 && initialUsername) {
+    username.set(initialUsername);
+  }
 });
 
 username.subscribe((newUsername) => {
@@ -85,4 +94,9 @@ username.subscribe((newUsername) => {
 
   console.log("Current user:", userdata);
   currentUser.set(userdata);
+
+  if (browser) {
+    const newUrl = window.location.origin + window.location.pathname + "#" + lcase;
+    window.history.replaceState(userdata, "", newUrl);
+  }
 });

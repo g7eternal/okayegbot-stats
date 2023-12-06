@@ -40,7 +40,14 @@
             <span class="visually-hidden">Loading...</span>
           </div>
         {/if}
-        {$currentUser.username}
+        <a
+          href={"https://twitch.tv/" + $currentUser.username}
+          target="_blank"
+          class="text-decoration-none"
+          title="Open channel on Twitch"
+        >
+          {$currentUser.username}
+        </a>
       </h4>
     </DataLine>
     <div>

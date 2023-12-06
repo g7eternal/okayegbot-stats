@@ -71,7 +71,7 @@
             {entry.rank}
           </td>
           <td class="flex-grow-1">
-            <a href={"https://twitch.tv/" + entry.user} target="_blank">{entry.user}</a>
+            <a href={"#" + entry.user}>{entry.user}</a>
           </td>
           <td>
             {entry.value}
