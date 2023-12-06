@@ -48,8 +48,9 @@
     padding: 0 4px;
   }
   .vs {
-    width: 3rem;
-    min-width: 3rem;
+    word-wrap: normal;
+    width: auto;
+    min-width: fit-content;
     font-size: 90%;
     font-weight: bold;
     text-shadow: 0px 0px 2px black;

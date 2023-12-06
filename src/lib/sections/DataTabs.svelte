@@ -10,7 +10,7 @@
   import Leaderboard from "$lib/sections/Leaderboard.svelte";
 </script>
 
-<div class="container-fluid">
+<div class="container-fluid flex-grow-1 d-flex flex-column">
   <ul class="nav nav-tabs">
     <li class="nav-item flex-sm-fill">
       <!-- svelte-ignore a11y-invalid-attribute -->
@@ -40,7 +40,7 @@
     </li>
   </ul>
 
-  <div class="tab-content">
+  <div class="tab-content h-100">
     <div class="tab-pane active" id="tabStats" role="tabpanel">
       {#if $username}
         {#if $currentUser}
@@ -82,6 +82,7 @@
 
 <style>
   .tab-pane {
+    height: 100%;
     border-left: 1px solid var(--bs-border-color);
     border-right: 1px solid var(--bs-border-color);
     border-bottom: 1px solid var(--bs-border-color);

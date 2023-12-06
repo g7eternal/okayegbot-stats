@@ -10,6 +10,12 @@
 <svelte:head>
   <title>Okayegbot stats</title>
   <link rel="icon" type="image/png" href="favicon.png" />
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+  </style>
 </svelte:head>
 
 {#if $errorState}
@@ -31,7 +37,7 @@
   </div>
 {:else}
   <div id="pageTopAnchor"></div>
-  <div class="container-xl">
+  <div class="container-xl h-100 d-flex flex-column">
     <SearchBar />
     <DataTabs />
   </div>

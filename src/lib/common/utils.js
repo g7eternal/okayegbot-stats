@@ -1,5 +1,7 @@
 import { CHART_BG, CHART_COLORS } from "$lib/common/consts.js";
 
+export const EMPTY_CALLBACK = () => {};
+
 export function makeGenericDataElement(label, count, colorName) {
   return {
     label: label,
