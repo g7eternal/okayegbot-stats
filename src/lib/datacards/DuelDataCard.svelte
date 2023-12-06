@@ -5,6 +5,7 @@
   import EggChartContainer from "$lib/components/EggChartContainer.svelte";
   import GenericWinLossChart from "$lib/charts/GenericWinLossChart.svelte";
   import LegendTable from "$lib/components/LegendTable.svelte";
+  import VersusLine from "$lib/components/VersusLine.svelte";
 </script>
 
 <ChartedDataCard title="⚔️ Duels" condition={$currentUser.duel.total} placeholder="User never joined a duel">
@@ -19,6 +20,11 @@
       ratioOf={$currentUser.duel.total}
       showTotal={true}
       colorMap={COMMON_COLOR_KEYS}
+    />
+    <VersusLine
+      title={"Record gain/loss in 1 duel"}
+      data={[$currentUser.duel.min, $currentUser.duel.max]}
+      labels={["loss", "gain"]}
     />
   </div>
 </ChartedDataCard>
