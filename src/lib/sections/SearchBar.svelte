@@ -50,7 +50,11 @@
         bind:value={usernameInput}
         on:keydown={detectEnterKey}
       />
-      <button class="btn btn-success" type="button" on:click={doSearch}>Search</button>
+      {#if !usernameInput && $username}
+        <button class="btn btn-warning" type="button" on:click={doSearch}>Clear filter</button>
+      {:else}
+        <button class="btn btn-success" type="button" on:click={doSearch}>Search</button>
+      {/if}
     </div>
   </div>
 </div>
